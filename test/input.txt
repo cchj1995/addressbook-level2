@@ -107,6 +107,35 @@
   find Charlie Betsy
 
 ##########################################################
+# test modify person command
+##########################################################
+
+# last active view: [1] betsy [2] charlie
+
+  # should catch invalid args format
+  modify
+  modify with one arg wrong
+  modify 1 with one arg wrong
+
+  # should catch invalid index
+  modify 3 New p/12345678 e/email@email.com
+
+  # should modify correctly and show new modify list
+  modify 2 Charlie Cee p/1214325 e/email@email.com a/333, gamma street t/friends t/school
+
+  # should catch invalid index
+  modify 2 Charlie 130 p/1214325 e/email@email.com a/333, gamma street t/friends t/school
+
+  # should catch numer in name
+  modify 1 Charlie 130 p/7777777 e/email@email.com a/333, gamma street t/friends t/school
+
+  # modifies correctly
+  modify 1 Charlie OneThirty p/7777777 e/email@email.com a/333, gamma street t/friends t/school
+
+  # find keywords to test delete
+  find Charlie Betsy
+
+##########################################################
 # test delete person command
 ##########################################################
 

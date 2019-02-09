@@ -9,6 +9,8 @@
 || add: Adds a person to the address book. Contact details can be marked private by prepending 'p' to the prefix.
 || Parameters: NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
 || Example: add John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney
+|| modify: Modifies a person identified by the index number used in the last find/list call with the new input values Parameters: INDEX NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: modify 1 John Doe p/98765432 e/johnd@hotmail.com a/322, Clementi Ave 2, #02-25 t/friends t/owesDrinks
 || delete: Deletes the person identified by the index number used in the last person listing.
 || Parameters: INDEX
 || Example: delete 1
@@ -233,6 +235,46 @@
 || 
 || 2 persons listed!
 || ===================================================
+|| Enter command: || [Command entered:  modify]
+|| Invalid command format! 
+|| modify: Modifies a person identified by the index number used in the last find/list call with the new input values Parameters: INDEX NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: modify 1 John Doe p/98765432 e/johnd@hotmail.com a/322, Clementi Ave 2, #02-25 t/friends t/owesDrinks
+|| ===================================================
+|| Enter command: || [Command entered:  modify with one arg wrong]
+|| The person index provided is invalid
+|| ===================================================
+|| Enter command: || [Command entered:  modify 1 with one arg wrong]
+|| Invalid command format! 
+|| modify: Modifies a person identified by the index number used in the last find/list call with the new input values Parameters: INDEX NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: modify 1 John Doe p/98765432 e/johnd@hotmail.com a/322, Clementi Ave 2, #02-25 t/friends t/owesDrinks
+|| ===================================================
+|| Enter command: || [Command entered:  modify 3 New p/12345678 e/email@email.com]
+|| Invalid command format! 
+|| modify: Modifies a person identified by the index number used in the last find/list call with the new input values Parameters: INDEX NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: modify 1 John Doe p/98765432 e/johnd@hotmail.com a/322, Clementi Ave 2, #02-25 t/friends t/owesDrinks
+|| ===================================================
+|| Enter command: || [Command entered:  modify 2 Charlie Cee p/1214325 e/email@email.com a/333, gamma street t/friends t/school]
+|| 	1. Charlie Cee Phone: 1214325 Email: email@email.com Address: 333, gamma street Tags: [school][friends]
+|| 
+|| Modified entry for: Charlie Dickson Phone: (private) 333333 Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends] -> Charlie Cee Phone: 1214325 Email: email@email.com Address: 333, gamma street Tags: [school][friends]
+|| ===================================================
+|| Enter command: || [Command entered:  modify 2 Charlie 130 p/1214325 e/email@email.com a/333, gamma street t/friends t/school]
+|| Person names should be spaces or alphabetic characters
+|| ===================================================
+|| Enter command: || [Command entered:  modify 1 Charlie 130 p/7777777 e/email@email.com a/333, gamma street t/friends t/school]
+|| Person names should be spaces or alphabetic characters
+|| ===================================================
+|| Enter command: || [Command entered:  modify 1 Charlie OneThirty p/7777777 e/email@email.com a/333, gamma street t/friends t/school]
+|| 	1. Charlie OneThirty Phone: 7777777 Email: email@email.com Address: 333, gamma street Tags: [school][friends]
+|| 
+|| Modified entry for: Charlie Cee Phone: 1214325 Email: email@email.com Address: 333, gamma street Tags: [school][friends] -> Charlie OneThirty Phone: 7777777 Email: email@email.com Address: 333, gamma street Tags: [school][friends]
+|| ===================================================
+|| Enter command: || [Command entered:  find Charlie Betsy]
+|| 	1. Betsy Choo Tags: [secretive]
+|| 	2. Charlie OneThirty Phone: 7777777 Email: email@email.com Address: 333, gamma street Tags: [school][friends]
+|| 
+|| 2 persons listed!
+|| ===================================================
 || Enter command: || [Command entered:  delete]
 || Invalid command format! 
 || delete: Deletes the person identified by the index number used in the last person listing.
@@ -252,7 +294,7 @@
 || The person index provided is invalid
 || ===================================================
 || Enter command: || [Command entered:  delete 2]
-|| Deleted Person: Charlie Dickson Phone: (private) 333333 Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
+|| Deleted Person: Charlie OneThirty Phone: 7777777 Email: email@email.com Address: 333, gamma street Tags: [school][friends]
 || ===================================================
 || Enter command: || [Command entered:  delete 2]
 || Person could not be found in address book
