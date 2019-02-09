@@ -10,6 +10,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
+/**
+ * Modifies an entry in the address book
+ */
 public class ModifyCommand extends Command {
 
     public static final String COMMAND_WORD = "modify";
@@ -44,6 +48,11 @@ public class ModifyCommand extends Command {
                 new Address(address, isAddressPrivate),
                 tagSet
         );
+    }
+
+    public ModifyCommand(int targetVisibleIndex, Person person) {
+        super(targetVisibleIndex);
+        this.toModify = person;
     }
 
     @Override
