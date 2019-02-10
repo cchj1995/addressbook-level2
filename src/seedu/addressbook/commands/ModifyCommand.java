@@ -50,6 +50,9 @@ public class ModifyCommand extends Command {
         );
     }
 
+    /**
+     * Constructor used for JUnit testing
+     */
     public ModifyCommand(int targetVisibleIndex, Person person) {
         super(targetVisibleIndex);
         this.toModify = person;

@@ -149,10 +149,20 @@ public class Parser {
         return new HashSet<>(tagStrings);
     }
 
+    /**
+     * Parses arguments in the context of the modify person command.
+     *
+     * @param args full command args string
+     * @return the prepared command
+     */
     private Command prepareModify(String args) {
         try {
+            //extracts the index value from the input string
             final String indexValue = args.substring(0,2);
+
+            //extracts the new modify information from the input string
             final String newInfo = args.substring(2,args.length());
+
             final int targetIndex = parseArgsAsDisplayedIndex(indexValue);
             final Matcher matcher = PERSON_DATA_ARGS_FORMAT.matcher(newInfo.trim());
             if (!matcher.matches()) {
